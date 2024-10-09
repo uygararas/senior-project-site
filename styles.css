@@ -11,6 +11,15 @@ body {
     padding: 1rem;
     text-align: center;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar img {
+    height: 40px;
+    width: auto;
+    margin-right: 1rem;
 }
 
 .navbar h1 {
