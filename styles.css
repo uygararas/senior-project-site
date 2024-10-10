@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #000000;
@@ -23,6 +24,7 @@ body {
 .logo {
     max-height: 50px; /* Adjust as needed */
     width: auto;
+    margin-right: 1rem; /* Space between logo and title */
 }
 
 .content {
@@ -58,6 +60,7 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     color: #fff;
+    flex: 0 0 auto; /* Prevents shrinking and maintains width */
 }
 
 .team-member:hover {
@@ -103,4 +106,77 @@ body {
 
 .reports a:hover {
     color: #ff6347;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    /* Adjust Navbar for Mobile */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+
+    /* Transform Team Section into Horizontal Scroll */
+    .team {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        padding-bottom: 1rem; /* Optional: Space for scrollbar */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* Style Scrollbar (Optional) */
+    .team::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .team::-webkit-scrollbar-thumb {
+        background-color: #555;
+        border-radius: 4px;
+    }
+
+    .team::-webkit-scrollbar-track {
+        background-color: #222;
+        border-radius: 4px;
+    }
+
+    /* Adjust Team Member for Mobile */
+    .team-member {
+        width: 200px; /* Increased width for better visibility */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .team-member img {
+        width: 70%; /* Adjust image size */
+    }
+
+    /* Hide Horizontal Scrollbar for Non-Webkit Browsers (Optional) */
+    .team {
+        scrollbar-width: thin;
+        scrollbar-color: #555 #222;
+    }
+
+    .team {
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .team::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in Webkit browsers */
+    }
+
+    /* Optional: Snap Scrolling for Team Members */
+    .team {
+        scroll-snap-type: x mandatory;
+    }
+
+    .team-member {
+        scroll-snap-align: start;
+    }
 }
