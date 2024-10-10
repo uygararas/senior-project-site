@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plutos Equities</title>
+    <title>Plutos - About Us</title>
     
     <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <!-- Optional: SVG Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <!-- Optional: Manifest File for PWA -->
     <link rel="manifest" href="images/site.webmanifest">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    
+    <!-- Optional: Theme Color -->
     <meta name="theme-color" content="#ffffff">
     
     <link rel="stylesheet" href="styles.css">
@@ -38,7 +38,7 @@
     </div>
     
     <div class="content">
-        <h2>Founders</h2>
+        <h2>Welcome to our Senior Project Page</h2>
         <div class="team">
             <a href="https://www.linkedin.com/in/uygar-aras" target="_blank">
                 <div class="team-member">
@@ -82,5 +82,53 @@
             </ul>
         </div>
     </div>
+
+    <!-- JavaScript for Scroll Functionality (Fallback) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const team = document.querySelector('.team');
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        team.addEventListener('mousedown', (e) => {
+            isDown = true;
+            team.classList.add('active');
+            startX = e.pageX - team.offsetLeft;
+            scrollLeft = team.scrollLeft;
+        });
+        team.addEventListener('mouseleave', () => {
+            isDown = false;
+            team.classList.remove('active');
+        });
+        team.addEventListener('mouseup', () => {
+            isDown = false;
+            team.classList.remove('active');
+        });
+        team.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - team.offsetLeft;
+            const walk = (x - startX) * 1; // Scroll speed multiplier
+            team.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchStartScrollLeft = 0;
+
+        team.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].pageX - team.offsetLeft;
+            touchStartScrollLeft = team.scrollLeft;
+        });
+
+        team.addEventListener('touchmove', function(e) {
+            const touchX = e.touches[0].pageX - team.offsetLeft;
+            const walk = (touchX - touchStartX) * 1; // Scroll speed multiplier
+            team.scrollLeft = touchStartScrollLeft - walk;
+        });
+    });
+    </script>
 </body>
 </html>
