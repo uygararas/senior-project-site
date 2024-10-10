@@ -13,7 +13,7 @@ body {
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Adjust as needed */
+    justify-content: flex-start;
 }
 
 .navbar h1 {
@@ -22,9 +22,9 @@ body {
 }
 
 .logo {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 50px;
     width: auto;
-    margin-right: 1rem; /* Space between logo and title */
+    margin-right: 1rem;
 }
 
 .content {
@@ -36,19 +36,23 @@ body {
 
 .team {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 1.5rem;
     margin-top: 3rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    padding-bottom: 1rem;
+    touch-action: pan-x; /* Allow horizontal panning */
 }
 
 .team a {
-    text-decoration: none; /* Removes underline */
-    color: inherit;        /* Inherits text color */
+    text-decoration: none;
+    color: inherit;
 }
 
 .team a:hover {
-    color: #ff6347;        /* Optional hover color */
+    color: #ff6347; /* Optional hover color */
 }
 
 .team-member {
@@ -56,11 +60,12 @@ body {
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 0 0 auto; /* Prevent shrinking */
     width: 150px;
     text-align: center;
     transition: transform 0.3s ease;
     color: #fff;
-    flex: 0 0 auto; /* Prevents shrinking and maintains width */
+    scroll-snap-align: start; /* Align snap */
 }
 
 .team-member:hover {
@@ -110,7 +115,6 @@ body {
 
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
-    /* Adjust Navbar for Mobile */
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -121,68 +125,47 @@ body {
         font-size: 1.5rem;
     }
 
-    /* Transform Team Section into Horizontal Scroll */
     .team {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        gap: 1rem;
-        padding-bottom: 1rem; /* Optional: Space for scrollbar */
+        flex-wrap: nowrap;               /* Prevent wrapping */
+        overflow-x: auto;                /* Enable horizontal scrolling */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        scroll-snap-type: x mandatory; /* Enable Scroll Snapping */
+        padding-bottom: 1rem;            /* Add padding to accommodate scrollbar */
+        scroll-snap-type: x mandatory;    /* Snap scrolling */
+        touch-action: pan-x;              /* Allow horizontal panning */
     }
 
-    /* Style Scrollbar (Optional) */
-    .team::-webkit-scrollbar {
-        height: 8px;
-    }
-
-    .team::-webkit-scrollbar-thumb {
-        background-color: #555;
-        border-radius: 4px;
-    }
-
-    .team::-webkit-scrollbar-track {
-        background-color: #222;
-        border-radius: 4px;
-    }
-
-    /* Firefox Scrollbar Styling */
-    .team {
-        scrollbar-width: thin;
-        scrollbar-color: #555 #222;
-    }
-
-    .team {
-        -ms-overflow-style: none; /* IE and Edge */
-    }
-
-    .team::-webkit-scrollbar {
-        display: none; /* Hide scrollbar in Webkit browsers */
-    }
-
-    /* Adjust Team Member for Mobile */
     .team-member {
-        width: 200px; /* Increased width for better visibility */
-        margin-bottom: 0; /* Remove bottom margin */
-        scroll-snap-align: start; /* Snap to start */
+        flex: 0 0 auto;                   /* Prevent team members from shrinking */
+        width: 150px;                     /* Maintain width or adjust as needed */
+        margin-right: 1rem;               /* Space between team members */
+    }
+
+    .team-member:last-child {
+        margin-right: 0;                  /* Remove right margin from the last item */
     }
 
     .team-member img {
-        width: 70%; /* Adjust image size */
+        width: 60%;                       /* Reduce image size on mobile */
     }
 
-    /* Adjust Reports Section for Mobile */
     .reports {
         padding: 1rem;
     }
 
     .reports ul {
-        padding-left: 1rem; /* Add some padding for better readability */
+        padding-left: 1rem;               /* Add some padding for better readability */
     }
 
     .reports li {
         margin-bottom: 0.75rem;
+    }
+
+    /* Hide Scrollbar (Optional) */
+    .team::-webkit-scrollbar {
+        display: none;
+    }
+    .team {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
     }
 }
