@@ -130,6 +130,7 @@ body {
         gap: 1rem;
         padding-bottom: 1rem; /* Optional: Space for scrollbar */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scroll-snap-type: x mandatory; /* Enable Scroll Snapping */
     }
 
     /* Style Scrollbar (Optional) */
@@ -147,17 +148,7 @@ body {
         border-radius: 4px;
     }
 
-    /* Adjust Team Member for Mobile */
-    .team-member {
-        width: 200px; /* Increased width for better visibility */
-        margin-bottom: 0; /* Remove bottom margin */
-    }
-
-    .team-member img {
-        width: 70%; /* Adjust image size */
-    }
-
-    /* Hide Horizontal Scrollbar for Non-Webkit Browsers (Optional) */
+    /* Firefox Scrollbar Styling */
     .team {
         scrollbar-width: thin;
         scrollbar-color: #555 #222;
@@ -171,12 +162,27 @@ body {
         display: none; /* Hide scrollbar in Webkit browsers */
     }
 
-    /* Optional: Snap Scrolling for Team Members */
-    .team {
-        scroll-snap-type: x mandatory;
+    /* Adjust Team Member for Mobile */
+    .team-member {
+        width: 200px; /* Increased width for better visibility */
+        margin-bottom: 0; /* Remove bottom margin */
+        scroll-snap-align: start; /* Snap to start */
     }
 
-    .team-member {
-        scroll-snap-align: start;
+    .team-member img {
+        width: 70%; /* Adjust image size */
+    }
+
+    /* Adjust Reports Section for Mobile */
+    .reports {
+        padding: 1rem;
+    }
+
+    .reports ul {
+        padding-left: 1rem; /* Add some padding for better readability */
+    }
+
+    .reports li {
+        margin-bottom: 0.75rem;
     }
 }
