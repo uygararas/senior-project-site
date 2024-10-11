@@ -11,24 +11,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="images/favicon.ico">
     
     <!-- Optional: Theme Color -->
     <meta name="theme-color" content="#ffffff">
     
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Optional JavaScript for Device Detection -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-            if (isMobile) {
-                document.body.classList.add("mobile-device");
-            }
-        });
-    </script>
 </head>
 <body>
     <div class="navbar">
@@ -84,52 +72,9 @@
         </div>
     </div>
 
-    <!-- JavaScript for Scroll Functionality (Fallback) -->
+    <!-- Optional JavaScript for Enhanced Functionality -->
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const team = document.querySelector('.team');
-
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        team.addEventListener('mousedown', (e) => {
-            isDown = true;
-            team.classList.add('active');
-            startX = e.pageX - team.offsetLeft;
-            scrollLeft = team.scrollLeft;
-        });
-        team.addEventListener('mouseleave', () => {
-            isDown = false;
-            team.classList.remove('active');
-        });
-        team.addEventListener('mouseup', () => {
-            isDown = false;
-            team.classList.remove('active');
-        });
-        team.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - team.offsetLeft;
-            const walk = (x - startX) * 1; // Scroll speed multiplier
-            team.scrollLeft = scrollLeft - walk;
-        });
-
-        // Touch events for mobile
-        let touchStartX = 0;
-        let touchStartScrollLeft = 0;
-
-        team.addEventListener('touchstart', function(e) {
-            touchStartX = e.touches[0].pageX - team.offsetLeft;
-            touchStartScrollLeft = team.scrollLeft;
-        });
-
-        team.addEventListener('touchmove', function(e) {
-            const touchX = e.touches[0].pageX - team.offsetLeft;
-            const walk = (touchX - touchStartX) * 1; // Scroll speed multiplier
-            team.scrollLeft = touchStartScrollLeft - walk;
-        });
-    });
+        // Optional: Add any JavaScript here if needed
     </script>
 </body>
 </html>
