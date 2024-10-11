@@ -13,7 +13,7 @@ body {
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-start; /* Adjust as needed */
 }
 
 .navbar h1 {
@@ -22,9 +22,9 @@ body {
 }
 
 .logo {
-    max-height: 50px;
+    max-height: 50px; /* Adjust as needed */
     width: auto;
-    margin-right: 1rem;
+    margin-right: 1rem; /* Space between logo and title */
 }
 
 .content {
@@ -35,24 +35,21 @@ body {
 }
 
 .team {
-    display: flex;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    /* Use white-space and inline-block for better compatibility */
+    white-space: nowrap;
     overflow-x: auto;
+    padding-bottom: 1rem; /* Space for scrollbar */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    scroll-snap-type: x mandatory; /* Enable snap scrolling */
-    padding-bottom: 1rem;
-    touch-action: pan-x; /* Allow horizontal panning */
 }
 
 .team a {
-    text-decoration: none;
-    color: inherit;
+    display: inline-block; /* Ensure elements are inline-block for horizontal layout */
+    text-decoration: none; /* Removes underline */
+    color: inherit;        /* Inherits text color */
 }
 
 .team a:hover {
-    color: #ff6347; /* Optional hover color */
+    color: #ff6347;        /* Optional hover color */
 }
 
 .team-member {
@@ -60,12 +57,17 @@ body {
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 0 0 auto; /* Prevent shrinking */
+    display: inline-block; /* Display inline-block for horizontal layout */
     width: 150px;
     text-align: center;
+    vertical-align: top; /* Align to top to prevent baseline gaps */
+    margin-right: 1rem;  /* Space between team members */
     transition: transform 0.3s ease;
     color: #fff;
-    scroll-snap-align: start; /* Align snap */
+}
+
+.team-member:last-child {
+    margin-right: 0; /* Remove right margin from the last item */
 }
 
 .team-member:hover {
@@ -126,26 +128,17 @@ body {
     }
 
     .team {
-        flex-wrap: nowrap;               /* Prevent wrapping */
-        overflow-x: auto;                /* Enable horizontal scrolling */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        padding-bottom: 1rem;            /* Add padding to accommodate scrollbar */
-        scroll-snap-type: x mandatory;    /* Snap scrolling */
-        touch-action: pan-x;              /* Allow horizontal panning */
+        /* Already set for horizontal scrolling */
+        /* Additional styles can be added if necessary */
     }
 
     .team-member {
-        flex: 0 0 auto;                   /* Prevent team members from shrinking */
-        width: 150px;                     /* Maintain width or adjust as needed */
-        margin-right: 1rem;               /* Space between team members */
-    }
-
-    .team-member:last-child {
-        margin-right: 0;                  /* Remove right margin from the last item */
+        width: 150px; /* Maintain width or adjust as needed */
+        margin-right: 1rem; /* Space between team members */
     }
 
     .team-member img {
-        width: 60%;                       /* Reduce image size on mobile */
+        width: 60%; /* Reduce image size on mobile */
     }
 
     .reports {
@@ -153,7 +146,7 @@ body {
     }
 
     .reports ul {
-        padding-left: 1rem;               /* Add some padding for better readability */
+        padding-left: 1rem; /* Add some padding for better readability */
     }
 
     .reports li {
