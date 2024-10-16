@@ -49,7 +49,7 @@ body {
 }
 
 .team a:hover {
-    color: #ff6347;        /* Optional hover color */
+    color: #1e90ff; /* New blue hover color */
 }
 
 .team-member {
@@ -112,7 +112,7 @@ body {
 }
 
 .reports a:hover {
-    color: #ff6347;
+    color: #1e90ff; /* New blue hover color */
 }
 
 /* Responsive Styles for Mobile Devices */
