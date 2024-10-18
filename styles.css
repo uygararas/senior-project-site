@@ -137,7 +137,7 @@ footer {
 }
 
 footer a {
-    color: #ffffff;
+    color: #1e90ff;
     text-decoration: none;
     margin: 0 1rem; /* Adds space between the links */
 }
@@ -157,6 +157,11 @@ footer a:hover {
     margin: 0;
     padding: 0 1rem; /* Adds spacing between text sections */
 }
+
+.footer-content .email {
+    margin-left: 2rem; /* Move the email slightly to the right */
+}
+
 
 
 /* Responsive Styles for Mobile Devices */
