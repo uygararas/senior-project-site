@@ -1,16 +1,11 @@
-/* Base Styles */
+/* Remove the white bar by resetting margins and padding */
 html, body {
-    height: 100%; /* Ensures the body takes the full viewport height */
     margin: 0;
+    padding: 0;
+    height: 100%;
     display: flex;
-    flex-direction: column; /* Flexbox layout for the page */
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #000000;
-    color: #fff; /* Updated for visibility */
-    line-height: 1.6;
+    flex-direction: column;
+    background-color: #000; /* Ensure the background is black */
 }
 
 /* Navbar Styles */
@@ -20,126 +15,45 @@ body {
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Logo on left, button on right */
+    justify-content: space-between; /* Button on the right, logo + title on the left */
     position: relative;
 }
 
 .navbar h1 {
     margin: 0;
-    font-size: 2.5rem; /* Adjusted for the same size as your text */
+    font-size: 2.5rem;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold; /* To match the bold style */
+    font-weight: bold;
+    margin-left: 1rem; /* Space between logo and title */
 }
 
 .logo {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 50px;
     width: auto;
-    margin-right: 1rem; /* Space between logo and title */
 }
 
 /* Button Styling */
 .product-button {
-    font-family: 'Roboto', sans-serif; /* Same font */
-    font-size: 1.5rem; /* Same size as the "Plutos Equities" text */
-    background-color: transparent; /* Transparent background */
-    color: #fff; /* White text */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff; /* White button */
     padding: 0.5rem 1rem;
     text-decoration: none;
-    font-weight: bold; /* Match the bold style */
-    border: none; /* Remove default button styling */
+    font-weight: bold;
+    border: none;
     position: absolute;
-    right: 1rem; /* Rightmost upper corner */
-    top: 1rem; /* Align with top */
-    transition: color 0.3s ease;
+    right: 1rem; /* Right-aligned button */
+    top: 1rem;   /* Align to the top */
 }
 
-/* Content Styles */
+/* Content Styling */
 .content {
     flex: 1;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
     text-align: center;
-}
-
-.team {
-    white-space: nowrap;
-    overflow-x: auto;
-    padding-bottom: 1rem; /* Space for scrollbar */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
-.team a {
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.team a:hover {
-    color: #1e90ff; /* New blue hover color */
-}
-
-.team-member {
-    background: #222;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    width: 150px;
-    text-align: center;
-    vertical-align: top;
-    margin-right: 1rem;
-    transition: transform 0.3s ease;
-    color: #fff;
-}
-
-.team-member:last-child {
-    margin-right: 0;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-}
-
-.team-member img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
-.reports {
-    background: #222;
-    padding: 2rem;
-    margin-top: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #fff;
-}
-
-.reports h2 {
-    margin-bottom: 1rem;
-    color: #fff;
-}
-
-.reports ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.reports li {
-    margin-bottom: 0.5rem;
-}
-
-.reports a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.reports a:hover {
-    color: #1e90ff;
 }
 
 /* Footer Styles */
@@ -151,41 +65,42 @@ footer {
     border-top: 1px solid #333;
     width: 100%;
     display: flex;
-    justify-content: center; /* Centers items horizontally */
+    justify-content: center;
     align-items: center;
-    flex-direction: row; /* Ensures items are in one line */
+    flex-direction: row;
 }
 
 footer a {
-    color: #1e90ff;
-    text-decoration: none;
+    color: #fff; /* White color */
+    text-decoration: underline; /* Underlined for emphasis */
+    margin: 0 0.5rem;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Keep the underline */
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem; /* Adds space between the text elements */
+    gap: 1rem;
 }
 
 .footer-content p {
     margin: 0;
-    padding: 0 1rem; /* Adds spacing between text sections */
+    padding: 0 1rem;
 }
 
 .footer-content .email {
-    margin-left: 2rem; /* Adjusts email position to the right */
+    margin-left: 0.5rem; /* Adjust the email alignment */
 }
 
 .email a {
-    margin-left: 0.5rem; /* Remove gap between 'Email:' and the email address */
+    margin-left: 0; /* Remove the gap between 'Email:' and the address */
 }
 
-/* Responsive Styles for Mobile Devices */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -197,34 +112,8 @@ footer a:hover {
         font-size: 1.5rem;
     }
 
-    .team-member {
-        width: 150px;
-        margin-right: 1rem;
-    }
-
-    .team-member img {
-        width: 60%;
-    }
-
-    .reports {
-        padding: 1rem;
-    }
-
-    .reports ul {
-        padding-left: 1rem;
-    }
-
-    .reports li {
-        margin-bottom: 0.75rem;
-    }
-
-    /* Hide Scrollbar (Optional) */
-    .team::-webkit-scrollbar {
-        display: none;
-    }
-
-    .team {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;     /* Firefox */
+    .product-button {
+        right: 0;
+        top: 1rem;
     }
 }
