@@ -13,7 +13,12 @@ body {
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Adjust as needed */
+    justify-content: space-between; /* Adjusted to space the title and links */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .navbar h1 {
@@ -21,10 +26,23 @@ body {
     font-size: 2rem;
 }
 
+.navbar nav a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #1e90ff; /* Blue hover effect */
+}
+
 .logo {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 50px;
     width: auto;
-    margin-right: 1rem; /* Space between logo and title */
+    margin-right: 1rem;
 }
 
 .content {
@@ -34,53 +52,28 @@ body {
     text-align: center;
 }
 
-.team {
-    /* Use white-space and inline-block for better compatibility */
-    white-space: nowrap;
-    overflow-x: auto;
-    padding-bottom: 1rem; /* Space for scrollbar */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
-.team a {
-    display: inline-block; /* Ensure elements are inline-block for horizontal layout */
-    text-decoration: none; /* Removes underline */
-    color: inherit;        /* Inherits text color */
-}
-
-.team a:hover {
-    color: #1e90ff; /* New blue hover color */
-}
-
-.team-member {
+/* About Page Styles */
+.about-page {
     background: #222;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block; /* Display inline-block for horizontal layout */
-    width: 150px;
-    text-align: center;
-    vertical-align: top; /* Align to top to prevent baseline gaps */
-    margin-right: 1rem;  /* Space between team members */
-    transition: transform 0.3s ease;
     color: #fff;
+    text-align: left;
+    margin-top: 2rem;
 }
 
-.team-member:last-child {
-    margin-right: 0; /* Remove right margin from the last item */
+.about-page h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.team-member:hover {
-    transform: translateY(-10px);
+.about-page p {
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
-.team-member img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
+/* Reports Page Styles */
 .reports {
     background: #222;
     padding: 2rem;
@@ -92,7 +85,7 @@ body {
 
 .reports h2 {
     margin-bottom: 1rem;
-    color: #fff;
+    font-size: 2.5rem;
 }
 
 .reports ul {
@@ -101,7 +94,7 @@ body {
 }
 
 .reports li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .reports a {
@@ -115,50 +108,22 @@ body {
     color: #1e90ff; /* New blue hover color */
 }
 
-/* Responsive Styles for Mobile Devices */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Team Member Styling for Founders Page */
+.team-member {
+    background: #333;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    vertical-align: top;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+    color: #fff;
+}
 
-    .navbar h1 {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .team {
-        /* Already set for horizontal scrolling */
-        /* Additional styles can be added if necessary */
-    }
-
-    .team-member {
-        width: 150px; /* Maintain width or adjust as needed */
-        margin-right: 1rem; /* Space between team members */
-    }
-
-    .team-member img {
-        width: 60%; /* Reduce image size on mobile */
-    }
-
-    .reports {
-        padding: 1rem;
-    }
-
-    .reports ul {
-        padding-left: 1rem; /* Add some padding for better readability */
-    }
-
-    .reports li {
-        margin-bottom: 0.75rem;
-    }
-
-    /* Hide Scrollbar (Optional) */
-    .team::-webkit-scrollbar {
-        display: none;
-    }
-    .team {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;     /* Firefox */
-    }
+.team-member:hover {
+    transform: translateY(-10px);
+    background-color: #444;
 }
