@@ -125,29 +125,39 @@ body {
 /* Footer Styles */
 footer {
     background-color: #222;
-    padding: 2rem;
+    padding: 1.5rem;
     color: #fff;
     text-align: center;
     border-top: 1px solid #333;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Aligns items vertically */
+    flex-direction: row; /* Ensures items are in one line */
 }
 
 footer a {
-    color: #1e90ff;
+    color: #ffffff;
     text-decoration: none;
+    margin: 0 1rem; /* Adds space between the links */
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-.footer-content p {
-    margin: 0.5rem 0;
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Adds space between the text elements */
 }
+
+.footer-content p {
+    margin: 0;
+    padding: 0 1rem; /* Adds spacing between text sections */
+}
+
 
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 768px) {
