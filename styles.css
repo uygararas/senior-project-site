@@ -1,9 +1,15 @@
 /* Base Styles */
+html, body {
+    height: 100%; /* Ensures the body takes the full viewport height */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Flexbox layout for the page */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #000000;
-    color: #fff; /* Updated for visibility */
-    margin: 0;
+    color: #fff;
     line-height: 1.6;
 }
 
@@ -27,7 +33,9 @@ body {
     margin-right: 1rem; /* Space between logo and title */
 }
 
+/* Ensures the content area takes the remaining space between the navbar and footer */
 .content {
+    flex: 1;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -35,7 +43,6 @@ body {
 }
 
 .team {
-    /* Use white-space and inline-block for better compatibility */
     white-space: nowrap;
     overflow-x: auto;
     padding-bottom: 1rem; /* Space for scrollbar */
@@ -43,9 +50,9 @@ body {
 }
 
 .team a {
-    display: inline-block; /* Ensure elements are inline-block for horizontal layout */
-    text-decoration: none; /* Removes underline */
-    color: inherit;        /* Inherits text color */
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .team a:hover {
@@ -57,17 +64,17 @@ body {
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block; /* Display inline-block for horizontal layout */
+    display: inline-block;
     width: 150px;
     text-align: center;
-    vertical-align: top; /* Align to top to prevent baseline gaps */
-    margin-right: 1rem;  /* Space between team members */
+    vertical-align: top;
+    margin-right: 1rem;
     transition: transform 0.3s ease;
     color: #fff;
 }
 
 .team-member:last-child {
-    margin-right: 0; /* Remove right margin from the last item */
+    margin-right: 0;
 }
 
 .team-member:hover {
@@ -112,19 +119,21 @@ body {
 }
 
 .reports a:hover {
-    color: #1e90ff; /* New blue hover color */
+    color: #1e90ff;
 }
 
+/* Footer Styles */
 footer {
     background-color: #222;
     padding: 2rem;
     color: #fff;
     text-align: center;
     border-top: 1px solid #333;
-    margin-top: 3rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the content */
+    align-items: center;
+    justify-content: center;
 }
 
 footer a {
@@ -152,18 +161,13 @@ footer a:hover {
         font-size: 1.5rem;
     }
 
-    .team {
-        /* Already set for horizontal scrolling */
-        /* Additional styles can be added if necessary */
-    }
-
     .team-member {
-        width: 150px; /* Maintain width or adjust as needed */
-        margin-right: 1rem; /* Space between team members */
+        width: 150px;
+        margin-right: 1rem;
     }
 
     .team-member img {
-        width: 60%; /* Reduce image size on mobile */
+        width: 60%;
     }
 
     .reports {
@@ -171,7 +175,7 @@ footer a:hover {
     }
 
     .reports ul {
-        padding-left: 1rem; /* Add some padding for better readability */
+        padding-left: 1rem;
     }
 
     .reports li {
@@ -182,6 +186,7 @@ footer a:hover {
     .team::-webkit-scrollbar {
         display: none;
     }
+
     .team {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;     /* Firefox */
