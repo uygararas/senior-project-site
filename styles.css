@@ -3,16 +3,17 @@ html, body {
     height: 100%; /* Ensures the body takes the full viewport height */
     margin: 0;
     padding: 0;
-    width: 100%; /* Ensures the width is restricted to viewport */
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
     display: flex;
-    flex-direction: column; /* Flexbox layout for the page */
+    flex-direction: column;
     box-sizing: border-box; /* Includes padding and border in element's total width and height */
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #000000;
-    color: #fff; /* For visibility */
+    color: #fff;
     line-height: 1.6;
 }
 
@@ -22,37 +23,38 @@ body {
     padding: 1rem;
     color: #fff;
     display: flex;
-    align-items: center; /* Vertical alignment for logo and text */
-    justify-content: flex-start; /* Logo and title to the left */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Padding within total width */
+    align-items: center;
+    justify-content: flex-start; /* Aligns logo and title to the left */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .navbar h1 {
     margin: 0;
-    font-size: 2rem; /* Adjusted font size for desktop */
+    font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    white-space: nowrap; /* Prevents the text from wrapping */
-    margin-left: 10px; /* Adds some space between the logo and title */
+    white-space: nowrap;
+    margin-left: 10px; /* Adds space between the logo and title */
 }
 
 .logo {
-    max-height: 50px; /* Adjust as needed */
+    max-height: 50px;
     width: auto;
 }
 
 /* Button Styling */
 .product-button {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem; /* Responsive size for button */
+    font-size: 1.2rem;
     background-color: transparent;
-    color: #fff; /* White text */
+    color: #fff;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    font-weight: bold; /* Match the bold style */
+    font-weight: bold;
     border: none;
-    margin-left: auto; /* Aligns the button to the right side */
+    margin-left: auto; /* Aligns the button to the right */
+    white-space: nowrap; /* Prevents wrapping */
 }
 
 /* Content Styles */
@@ -69,18 +71,18 @@ body {
 .team {
     white-space: nowrap;
     overflow-x: auto; /* Allows horizontal scrolling for team members */
-    padding-bottom: 1rem; /* Space for scrollbar */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 .team a {
     display: inline-block;
     text-decoration: none;
-    color: inherit; /* Inherit text color */
+    color: inherit;
 }
 
 .team a:hover {
-    color: #1e90ff; /* Blue hover color */
+    color: #1e90ff;
 }
 
 .team-member {
@@ -91,7 +93,7 @@ body {
     display: inline-block;
     width: 150px;
     text-align: center;
-    vertical-align: top; /* Align to top to prevent baseline gaps */
+    vertical-align: top;
     margin-right: 1rem;
     transition: transform 0.3s ease;
     color: #fff;
@@ -144,7 +146,7 @@ body {
 }
 
 .reports a:hover {
-    color: #1e90ff; /* Blue hover color */
+    color: #1e90ff;
 }
 
 /* Footer Styles */
@@ -157,23 +159,23 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers items vertically */
+    align-items: center;
 }
 
 footer a {
-    color: #fff; /* White links */
-    text-decoration: underline; /* Underlined links */
+    color: #fff;
+    text-decoration: underline;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Keep the underline on hover */
+    text-decoration: underline;
 }
 
 .footer-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem; /* Adds space between the text elements */
+    gap: 1rem;
 }
 
 .footer-content p {
@@ -181,9 +183,44 @@ footer a:hover {
 }
 
 .footer-content .email {
-    margin-left: 2rem; /* Adjusts email position to the right */
+    margin-left: 2rem;
 }
 
 .email a {
-    margin-left: 0.5rem; /* Remove gap between 'Email:' and the email address */
+    margin-left: 0.5rem;
+}
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar h1 {
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+    }
+
+    .product-button {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .content {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    .team-member {
+        width: 120px;
+    }
+
+    .reports h2 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
 }
