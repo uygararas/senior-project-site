@@ -1,13 +1,13 @@
 /* Modern Style - Unified Theme for Plutos Equities */
 :root {
-    --primary-color: #10b981;
-    --primary-hover: #059669;
-    --secondary-color: #059669;
+    --primary-color: #099466;
+    --primary-hover: #099466;
+    --secondary-color: #099466;
     --background: #111111;
     --card-bg: #1a1a1a;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
-    --border-color: rgba(255, 255, 255, 0.08);
+    --border-color: rgba(250, 250, 250, 0.08);
     --gradient-start: #10b981;
     --gradient-end: #064e3b;
     --accent-highlight: #f0f0f0;
@@ -148,10 +148,27 @@ a {
     background: linear-gradient(to right, var(--primary-hover), var(--gradient-start));
 }
 
+/* Logbook Button Styles */
+.logbook-button {
+    display: inline-block;
+    background-color: #01080671;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 8px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.logbook-button:hover {
+    background-color: #059669;
+}
+
 /* Content Styles */
 .content {
     flex: 1;
-    max-width: 1200px;
+    max-width: 1400px; /* Increased from 1200px to give more space */
     margin: 0 auto;
     padding: 3rem 1.5rem;
     width: 100%;
@@ -333,14 +350,14 @@ a {
 
 /* Team Members */
 .team {
-    white-space: nowrap;
-    overflow-x: auto;
+    white-space: normal; /* Changed from nowrap */
+    overflow-x: visible; /* Removed scrolling */
     padding-bottom: 1rem;
     -webkit-overflow-scrolling: touch;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem; /* Reduced gap to fit better */
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Changed to wrap for better fit */
 }
 
 .team a {
@@ -355,7 +372,7 @@ a {
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     display: inline-block;
-    width: 180px;
+    width: 230px; /* Slightly adjusted for better fit */
     text-align: center;
     vertical-align: top;
     margin-right: 0;
@@ -366,28 +383,39 @@ a {
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    border-color: rgba(16, 185, 129, 0.6);
+    border-color: rgba(230, 236, 234, 0.555);
 }
 
 .team-member img {
-    width: 90%;
+    width: 90%; /* Kept as percentage to maintain proportions */
     height: auto;
     border-radius: 50%;
     margin-bottom: 1.2rem;
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    border: 3px solid var(--primary-color); /* Preserved the green ring */
+    box-shadow: 0 4px 12px rgb(255, 255, 255);
     transition: all 0.3s ease;
 }
 
 .team-member:hover img {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
+    box-shadow: 0 8px 20px rgba(244, 255, 251, 0.815);
 }
 
-.team-member h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+/* Make team responsive on all screens */
+@media (max-width: 1300px) {
+    .team {
+        gap: 0.75rem;
+    }
+    
+    .team-member {
+        width: 210px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .team-member {
+        width: 190px;
+    }
 }
 
 /* Reports Styles */
@@ -708,7 +736,7 @@ footer {
     }
     
     .team-member {
-        width: 160px;
+        width: 220px; /* Adjusted for tablet */
     }
 }
 
@@ -764,15 +792,13 @@ footer {
     }
     
     .team-member {
-        width: 150px;
-        padding: 1.25rem;
+        width: 200px; /* Adjusted for mobile */
     }
 }
 
 @media (max-width: 480px) {
     .team-member {
-        width: 140px;
-        padding: 1rem;
+        width: 180px; /* Adjusted for small mobile */
     }
     
     .team-member img {
