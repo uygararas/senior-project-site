@@ -383,7 +383,7 @@ a {
 .team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    border-color: rgba(230, 236, 234, 0.555);
+    border-color: rgba(0, 0, 0, 0.555);
 }
 
 .team-member img {
@@ -392,7 +392,7 @@ a {
     border-radius: 50%;
     margin-bottom: 1.2rem;
     border: 3px solid var(--primary-color); /* Preserved the green ring */
-    box-shadow: 0 4px 12px rgb(255, 255, 255);
+    box-shadow: 0 4px 12px rgb(0, 0, 0);
     transition: all 0.3s ease;
 }
 
