@@ -476,9 +476,37 @@ footer a:hover {
 
 .screenshots-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.screenshots-gallery.single-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  overflow-y: auto;
+  max-height: 80vh;
+  padding-right: 1rem;
+  scroll-behavior: smooth;
+}
+
+.screenshots-gallery.single-column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.screenshots-gallery.single-column::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.screenshots-gallery.single-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.screenshots-gallery.single-column::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .screenshot-item {
@@ -491,6 +519,7 @@ footer a:hover {
   transform-origin: center;
   position: relative;
   overflow: visible;
+  scroll-margin-top: 2rem;
 }
 
 .screenshot-item:hover {
