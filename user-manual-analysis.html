@@ -13,20 +13,23 @@
     <link rel="manifest" href="images/site.webmanifest">
     <link rel="shortcut icon" href="images/favicon.ico">
     
-    <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="output.css">
+    <meta name="theme-color" content="#10b981">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="modern-style.css">
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html">
-            <img src="images/favicon.png" alt="Plutos Logo" class="logo">
-        </a>
-        <a href="index.html" class="title-link">
-            <h1>Plutos Equities</h1>
-        </a>
+        <div class="navbar-brand">
+            <a href="index.html"><img src="images/favicon.png" alt="Plutos Logo" class="logo"></a>
+            <a href="index.html" class="title-link"><h1>Plutos Equities</h1></a>
+        </div>
         <div class="nav-buttons">
+            <a href="what-we-offer.html" class="nav-button">What We Offer</a>
             <a href="user-manual.html" class="nav-button">User Manual</a>
-            <a href="https://www.plutosequities.com" class="product-button" target="_blank">Visit Plutos Equities</a>
+            <a href="https://www.plutosequities.com" class="product-button" target="_blank">
+                <i class="fas fa-chart-line"></i>
+                Visit Plutos Equities
+            </a>
         </div>
     </div>
     
@@ -52,9 +55,10 @@
                             <div class="screenshot-tips">
                                 <strong>Dashboard Tip:</strong> The main page provides quick insights into market conditions and trending companies.
                             </div>
-                            </div>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="screenshots-gallery">
                         <div class="screenshot-item">
                             <img src="images/analysis/company-stock.png" alt="Company Stock Price">
                             <h4>Step 2: Explore Company Profile</h4>
@@ -63,7 +67,9 @@
                                 <strong>Tip:</strong> The price chart displays historical performance with customizable time ranges. Use the days dropdown to change the forecasted days selection.
                             </div>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="screenshots-gallery">
                         <div class="screenshot-item">
                             <img src="images/analysis/company-feature.png" alt="Feature Analysis">
                             <h4>Step 3: Review Financial Data</h4>
@@ -91,10 +97,10 @@
         </div>
     </div>
     
-    <footer class="bg-gray-600 p-6 w-full">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <p class="text-white">&copy; 2024 Plutos Equities. All rights reserved.</p>
-            <a href="mailto:info@plutosequities.com" class="text-blue-500 hover:text-blue-400">Contact Us</a>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Plutos Equities. All rights reserved.</p>
+            <a href="mailto:info@plutosequities.com" class="footer-link">Contact Us</a>
         </div>
     </footer>
 </body>
