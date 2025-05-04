@@ -479,10 +479,58 @@ a {
 
 /* Manual Styles */
 .manual-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.manual-header-back {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.manual-title {
+    text-align: center;
+    margin: 0;
+}
+
+.manual-navigation-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5rem;
+    text-align: right;
+}
+
+.manual-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed for your design */
+}
+
+.prev-link, .next-link {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+
+.prev-link:hover, .next-link:hover {
+    color: #34d399;
+    text-decoration: underline;
 }
 
 .manual-header h2 {
@@ -496,18 +544,6 @@ a {
     display: flex;
     gap: 1rem;
     align-items: center;
-}
-
-.back-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
-    color: var(--text-primary);
-    text-decoration: underline;
 }
 
 .manual-content {
