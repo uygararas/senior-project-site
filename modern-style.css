@@ -1096,90 +1096,226 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .navbar-brand {
-        margin-bottom: 1rem;
-    }
-    
-    .nav-buttons {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-    }
-    
-    .nav-button {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem;
-    }
-    
-    .product-button {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .features-grid,
-    .plans-grid,
-    .advantages-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+/* User Manual Styles */
+.manual-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
 
+.manual-header-back,
+.manual-navigation-top {
+    display: flex;
+    align-items: center;
+}
+
+.manual-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.back-link,
+.prev-link,
+.next-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+}
+
+.back-link:hover,
+.prev-link:hover,
+.next-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+.nav-placeholder {
+    width: 150px;
+}
+
+.manual-content {
+    background: rgba(15, 15, 15, 0.6);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+}
+
+.manual-section h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary-color);
+}
+
+.manual-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Screenshot Sections */
+.screenshots-section {
+    margin: 2rem 0;
+}
+
+.screenshots-gallery {
+    margin-bottom: 2rem;
+}
+
+.screenshot-item {
+    background: rgba(15, 15, 15, 0.8);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 500px;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.screenshot-item h4 {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.screenshot-item p {
+    color: var(--text-secondary);
+    margin: 0.75rem 0;
+}
+
+.screenshot-tips {
+    background: rgba(16, 185, 129, 0.1);
+    border-left: 3px solid var(--primary-color);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.screenshot-tips strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.additional-info {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.additional-info h4 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.additional-info ul {
+    margin-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.additional-info li {
+    margin-bottom: 0.5rem;
+}
+
+.additional-info strong {
+    color: var(--primary-color);
+}
+
+/* User Manual Responsive */
+@media (max-width: 992px) {
     .manual-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 1rem;
     }
     
-    .manual-header-links {
-        margin-top: 1rem;
+    .manual-title {
+        font-size: 1.75rem;
+        text-align: left;
+    }
+    
+    .manual-navigation-top {
         width: 100%;
+        justify-content: space-between;
     }
     
-    .team-member {
-        width: 200px; /* Adjusted for mobile */
+    .nav-placeholder {
+        display: none;
     }
     
-    .datasets-list {
-        grid-template-columns: 1fr;
+    .screenshot-item img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .manual-content {
+        padding: 1.5rem;
     }
     
-    .model-diagram {
-        max-width: 90%;
+    .screenshot-item {
+        padding: 1rem;
     }
     
-    .plans-section, .why-us-section {
-        padding: 2rem 1.25rem;
+    .screenshot-item img {
+        max-height: 350px;
     }
     
-    .advantage-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
-    .advantage-icon {
-        margin-bottom: 0.5rem;
-    }
-    
-    .dataset-exclusive {
+    .manual-navigation {
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
     }
     
-    .exclusive-icon {
-        margin-bottom: 0.5rem;
+    .prev-link, .next-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .manual-header-back,
+    .manual-navigation-top {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .screenshot-item img {
+        max-height: 300px;
+    }
+    
+    .screenshot-tips {
+        padding: 0.75rem;
     }
 }
 
