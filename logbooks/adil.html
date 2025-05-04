@@ -9,15 +9,355 @@
 </head>
 <body>
   <a href="../index.html" class="back-button">← Back to Home</a>
-  
+
   <header>
     <h1>CS491‑2 Senior Project Design Logbook</h1>
     <p>Asım Adil Can<br>
-       <small>September 16, 2024 – May 2, 2025</small>
+       <small>September 16, 2024 – May 4, 2025</small>
     </p>
   </header>
-  
+
   <main>
+    <section>
+      <h2>Week of September 16, 2024</h2>
+      <ul>
+        <li>Kicked off senior project; clarified problem statement and success metrics.</li>
+        <li>Surveyed recent literature on financial time‑series forecasting and portfolio optimization.</li>
+        <li>Collected candidate open‑source datasets (Yahoo Finance, Kaggle equities data).</li>
+        <li>Outlined experimental roadmap for traditional ML vs. deep‑learning approaches.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of September 23, 2024</h2>
+      <ul>
+        <li>Performed exploratory data analysis—examined stationarity, seasonality, and outliers.</li>
+        <li>Implemented a baseline <em>Random Forest Regressor</em> with default parameters.</li>
+        <li>Set up experiment‑tracking in Weights & Biases; logged initial metrics (RMSE, MAE).</li>
+        <li>Identified need for feature engineering (lag windows, technical indicators).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of September 30, 2024</h2>
+      <ul>
+        <li>Engineered lag‑based features (t‑1…t‑30) and volatility measures.</li>
+        <li>Ran grid search on Random Forest (<code>n_estimators</code>, <code>max_depth</code>, <code>min_samples_split</code>).</li>
+        <li>Achieved 9% RMSE improvement over baseline.</li>
+        <li>Documented findings and pushed notebooks to repo.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of October 7, 2024</h2>
+      <ul>
+        <li>Researched recurrent neural networks for time‑series; selected <em>GRU</em> for trials.</li>
+        <li>Implemented GRU baseline in PyTorch (1 hidden layer, 64 units).</li>
+        <li>Set up time‑series cross‑validation (sliding window) for deep‑learning pipeline.</li>
+        <li>Compared training times vs. Random Forest; noted GPU acceleration benefits.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of October 14, 2024</h2>
+      <ul>
+        <li>Hyper‑parameter tuning for GRU (<code>hidden_size</code>, <code>num_layers</code>, <code>dropout</code>).</li>
+        <li>Implemented early‑stopping and learning‑rate schedulers.</li>
+        <li>GRU (2 layers, 128 units) surpassed Random Forest by 4 % on validation RMSE.</li>
+        <li>Held sprint review; decided to pursue ensemble strategy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of October 21, 2024</h2>
+      <ul>
+        <li>Experimented with stacking: GRU + Random Forest meta‑learner.</li>
+        <li>Implemented feature‑scaling pipeline (StandardScaler, MinMax for deep models).</li>
+        <li>Benchmarked ensembles—observed marginal gains, increased complexity.</li>
+        <li>Drafted technical blog post summarizing October experiments.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of October 28, 2024</h2>
+      <ul>
+        <li>Refactored data‑loading pipeline using PyTorch DataLoader for efficiency.</li>
+        <li>Automated hyper‑parameter sweeps with Optuna (50 trials, parallelized).</li>
+        <li>Recorded best GRU config: 3 layers, 96 units, dropout 0.2, LR 1e‑3.</li>
+        <li>Pushed experiment artifacts and updated README with results.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of November 4, 2024</h2>
+      <ul>
+        <li>Introduced comprehensive metric dashboard (RMSE, MAPE, Sharpe).</li>
+        <li>Added early‑stopping callbacks to reduce overfitting on GRU.</li>
+        <li>Performed ablation study on feature windows (7, 14, 28 days).</li>
+        <li>Selected 14‑day window as sweet‑spot for bias‑variance trade‑off.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of November 11, 2024</h2>
+      <ul>
+        <li>Computed feature importances for Random Forest; applied SHAP to GRU embeddings.</li>
+        <li>Discovered volatility and momentum indicators most predictive.</li>
+        <li>Presented interpretability findings to advisors.</li>
+        <li>Logged experiment documentation into wiki.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of November 18, 2024</h2>
+      <ul>
+        <li>Enhanced preprocessing: missing‑value imputation via forward fill & KNN.</li>
+        <li>Standardized scaling step across ML and DL pipelines.</li>
+        <li>Retested models; confirmed stability of performance improvements.</li>
+        <li>Created unit tests for preprocessing utilities.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of November 25, 2024</h2>
+      <ul>
+        <li>Implemented incremental (online) training for GRU to handle data drift.</li>
+        <li>Simulated drift scenarios; evaluated model robustness.</li>
+        <li>Added drift‑detection alerts to monitoring plan.</li>
+        <li>Updated project timeline for upcoming deployment work.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of December 2, 2024</h2>
+      <ul>
+        <li>Benchmarked alternative models (Prophet, XGBoost) for comparison.</li>
+        <li>XGBoost lag‑feature model under‑performed GRU; documented rationale to drop.</li>
+        <li>Cleaned codebase; enforced PEP‑8 linting across notebooks.</li>
+        <li>Prepared dataset versioning strategy using DVC.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of December 9, 2024</h2>
+      <ul>
+        <li>Consolidated experiment results into master spreadsheet.</li>
+        <li>Wrote draft of methodology section for final report.</li>
+        <li>Set up CI checks for automatic unit‑test execution on PRs.</li>
+        <li>Planned hand‑off to deployment track starting December 23.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of December 16, 2024</h2>
+      <ul>
+        <li>Finalized GRU hyper‑parameters for production candidate.</li>
+        <li>Tagged model artifact v1.0 and stored in model registry.</li>
+        <li>Held technical deep dive with backend team on serving architecture.</li>
+        <li>Scheduled sprint for main‑page database automatization work.</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 2024 ==================== -->
+    <section>
+      <h2>Week of December 23, 2024</h2>
+      <ul>
+        <li>Researched financial forecasting models and methodologies.</li>
+        <li>Developed initial data validation and quality assurance workflows.</li>
+        <li>Created project testing framework and continuous integration setup.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of December 30, 2024</h2>
+      <ul>
+        <li>Implemented automated data quality checks for financial datasets.</li>
+        <li>Designed evaluation metrics for forecasting model performance.</li>
+        <li>Developed integration testing suite for API endpoints.</li>
+        <li>Created documentation standards for project codebase.</li>
+      </ul>
+    </section>
+
+    <!-- ==================== 2025 ==================== -->
+    <section>
+      <h2>Week of January 6, 2025</h2>
+      <ul>
+        <li>Finalized main page database automatization (<code>PLUT‑56</code>).</li>
+        <li>Completed model feature elimination tests (<code>PLUT‑31</code>).</li>
+        <li>Kicked off model deployment preparations (<code>PLUT‑93</code>).</li>
+        <li>Held sprint retrospective and planned upcoming backend tasks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of January 13, 2025</h2>
+      <ul>
+        <li>Deployed predictive model to staging environment (<code>PLUT‑93</code>).</li>
+        <li>Began frontend package installation & UI beautification (<code>PLUT‑96</code>).</li>
+        <li>Reviewed backend completion requirements (<code>PLUT‑97</code>).</li>
+        <li>Set up initial monitoring dashboards for staging cluster.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of January 20, 2025</h2>
+      <ul>
+        <li>Integrated stock‑price data via Yahoo Finance API (<code>PLUT‑106</code>).</li>
+        <li>Established secure Azure database connection (<code>PLUT‑92</code>).</li>
+        <li>Implemented payment micro‑service (deadline 21 Jan) (<code>PLUT‑57</code>).</li>
+        <li>Conducted unit tests for new backend endpoints.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of January 27, 2025</h2>
+      <ul>
+        <li>Completed core backend functionality (<code>PLUT‑97</code>).</li>
+        <li>Performed code review & refactoring across services.</li>
+        <li>Upgraded CI/CD pipelines for faster feedback loops.</li>
+        <li>Documented API contract changes for frontend team.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of February 3, 2025</h2>
+      <ul>
+        <li>Executed backend deployment to production cluster (<code>PLUT‑100</code>).</li>
+        <li>Configured rollout strategy for frontend deployment (<code>PLUT‑101</code>).</li>
+        <li>Introduced blue‑green deployment workflow for risk mitigation.</li>
+        <li>Began PageGuard backend service design (<code>PLUT‑103</code>).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of February 10, 2025</h2>
+      <ul>
+        <li>Completed frontend deployment pipeline & release (<code>PLUT‑101</code>).</li>
+        <li>Implemented PageGuard backend endpoints (<code>PLUT‑103</code>).</li>
+        <li>Ran performance benchmarks on API gateway.</li>
+        <li>Addressed security audit findings in data layer.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of February 17, 2025</h2>
+      <ul>
+        <li>Built PageGuard frontend module (<code>PLUT‑104</code>).</li>
+        <li>Conducted end‑to‑end user acceptance testing on PageGuard.</li>
+        <li>Optimized lazy‑loading strategy for React components.</li>
+        <li>Gathered stakeholder feedback for UI/UX improvements.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of February 24, 2025</h2>
+      <ul>
+        <li>Performed backend performance optimization under load.</li>
+        <li>Implemented connection pooling & query caching.</li>
+        <li>Reduced average API latency by 38%.</li>
+        <li>Updated technical documentation for optimizations.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of March 3, 2025</h2>
+      <ul>
+        <li>Conducted security hardening & penetration tests.</li>
+        <li>Added rate‑limiting & enhanced input sanitation.</li>
+        <li>Patched identified vulnerabilities across microservices.</li>
+        <li>Reviewed test coverage for critical security paths.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of March 10, 2025</h2>
+      <ul>
+        <li>Implemented real‑time monitoring and alerting dashboards.</li>
+        <li>Integrated Prometheus metrics with Grafana visualizations.</li>
+        <li>Configured alert thresholds for SLO compliance.</li>
+        <li>Trained team on incident‑response playbooks.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of March 17, 2025</h2>
+      <ul>
+        <li>Prepared deployment procedure documentation.</li>
+        <li>Created runbooks for common operational tasks.</li>
+        <li>Facilitated knowledge‑transfer workshops for new interns.</li>
+        <li>Established coding‑style guidelines organization‑wide.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of March 24, 2025</h2>
+      <ul>
+        <li>Executed scalability testing at 5× projected load.</li>
+        <li>Identified & resolved memory‑leak issues in service layer.</li>
+        <li>Improved horizontal autoscaling policies.</li>
+        <li>Presented findings to advisory board for feedback.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of March 31, 2025</h2>
+      <ul>
+        <li>Implemented feedback from scalability review.</li>
+        <li>Fixed outstanding bugs from QA backlog.</li>
+        <li>Optimized SQL queries reducing cost by 22%.</li>
+        <li>Updated user documentation & API reference.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of April 7, 2025</h2>
+      <ul>
+        <li>Drafted final presentation slide deck & speaker notes.</li>
+        <li>Rehearsed demo workflow and fail‑over scenarios.</li>
+        <li>Collected final KPIs for project performance report.</li>
+        <li>Aligned team on deliverable checklist for graduation review.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of April 14, 2025</h2>
+      <ul>
+        <li>Conducted full dress‑rehearsal of presentation.</li>
+        <li>Refined UI visuals based on stakeholder feedback.</li>
+        <li>Completed dataset licensing compliance review.</li>
+        <li>Locked feature set for release candidate.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of April 21, 2025</h2>
+      <ul>
+        <li>Reviewed final deliverables with faculty advisor.</li>
+        <li>Submitted draft of final report for feedback.</li>
+        <li>Added glossary & appendix to documentation.</li>
+        <li>Performed final accessibility audits.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of April 28, 2025</h2>
+      <ul>
+        <li>Conducted final system integration testing and validation.</li>
+        <li>Completed comprehensive test coverage documentation.</li>
+        <li>Finalized code quality metrics and performance benchmarks.</li>
+        <li>Participated in final project presentation and demonstration.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Week of May 4, 2025</h2>
+      <ul>
+        <li>Submitted the final project report, codebase, and documentation bundle.</li>
+        <li>Archived repositories and set up long‑term maintenance guidelines.</li>
+        <li>Reflected on project outcomes and lessons learned for future work.</li>
+        <li>Celebrated successful completion of the senior project with the team.</li>
+      </ul>
+    </section>
   </main>
 
   <footer>
