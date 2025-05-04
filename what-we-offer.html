@@ -15,27 +15,74 @@
     <link rel="stylesheet" href="modern-style.css">
 </head>
 <body>
-    <div class="navbar">
+    <header class="navbar">
         <div class="navbar-brand">
             <a href="index.html"><img src="images/favicon.png" alt="Plutos Logo" class="logo"></a>
             <a href="index.html" class="title-link"><h1>Plutos Equities</h1></a>
         </div>
-        <div class="nav-buttons">
+        <nav class="nav-buttons">
             <a href="what-we-offer.html" class="nav-button">What We Offer</a>
             <a href="user-manual.html" class="nav-button">User Manual</a>
             <a href="https://www.plutosequities.com" class="product-button" target="_blank">
                 <i class="fas fa-chart-line"></i>
                 Visit Plutos Equities
             </a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="content">
+    <main class="content">
         <h2 class="page-title">What We Offer</h2>
 
         <p class="intro-text">
-            Plutos Equities is a next-generation capital forecasting platform using cutting-edge data science to predict financial performance for top NASDAQ-listed companies. By integrating traditional financial indicators with sentiment analysis from earnings calls, filings, and news articles, we deliver powerful, explainable, and actionable insights to analysts, investors, and institutions.
+            Plutos Equities is a next-generation capital‑forecasting platform using cutting‑edge data science to predict financial performance for top NASDAQ‑listed companies. By integrating traditional financial indicators with sentiment analysis from filings, earnings calls, and market events, we deliver powerful, explainable, and actionable insights to analysts, investors, and institutions.
         </p>
+
+        <!-- NEW: DATASETS & SOURCES -->
+        <section class="datasets-section">
+            <h3>Datasets & Sources</h3>
+            <ul class="datasets-list">
+                <li><strong>SecEdgar Q‑Reports</strong> – 5000 reports (2009–2025) + 2000 legacy filings (2000–2009)</li>
+                <li><strong>Yahoo Finance</strong> – Daily stock prices &amp; macroeconomic indicators (2000–2025)</li>
+                <li><strong>SecEdgar 8‑K Reports</strong> – Market‑moving event disclosures (2009–2025)</li>
+                <li><strong>Overall coverage:</strong> ~80 companies over 25 years of history</li>
+            </ul>
+            
+            <div class="dataset-exclusive">
+                <div class="exclusive-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="exclusive-content">
+                    <h4>Exclusive Proprietary Dataset</h4>
+                    <p>This comprehensive, aligned dataset is <strong>only available through Plutos Equities</strong>. Our team spent thousands of hours collecting, cleaning, and normalizing this data to create the most complete financial forecasting foundation available. This exclusive dataset represents one of the most significant competitive advantages of our platform.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: DATA PIPELINE & PREPROCESSING -->
+        <section class="pipeline-section">
+            <h3>Data Pipeline & Preprocessing</h3>
+            <div class="pipeline-grid">
+                <div class="pipeline-card">
+                    <h4>Tabular Preprocessing</h4>
+                    <ul>
+                        <li>Compute stock price change rates from daily data</li>
+                        <li>Fetch &amp; normalize macroeconomic indicators</li>
+                        <li>Align quarterly report tables into time‑series features</li>
+                        <li>Fill missing values manually or via statistical imputation</li>
+                    </ul>
+                </div>
+                <div class="pipeline-card">
+                    <h4>Semantic Analysis</h4>
+                    <ul>
+                        <li>Parse inline HTML and extract narrative text from Q‑reports</li>
+                        <li>Split into ~2 million text chunks, filter down to 580 000 with PHI‑4</li>
+                        <li>Score each chunk using a BERT-based sentiment model (0–200 scale)</li>
+                        <li>Aggregate chunk‐scores into per‑report sentiment features</li>
+                        <li>Keyword‑driven scoring for 8‑K event filings</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <div class="features-grid">
             <div class="feature-card">
@@ -81,32 +128,82 @@
             </div>
         </div>
 
+        <!-- MODEL ARCHITECTURE -->
+        <section class="model-section">
+            <h3>Model Architecture & State‑of‑the‑Art</h3>
+            <div class="model-visual">
+                <img src="images/model-architecture.png" alt="Model architecture diagram" class="model-diagram">
+                <div class="model-highlights-container">
+                    <ul class="model-highlights">
+                        <li><strong>Sequential Modeling:</strong> 25 years of structured + unstructured data fusion</li>
+                        <li><strong>Multimodal Learning:</strong> Text + Tabular + Temporal features to mirror investor workflows</li>
+                        <li><strong>Quantile‑Based Predictions:</strong> Confidence estimates on real‑world noisy data</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXAMPLE WORKFLOW -->
+        <section class="example-section">
+            <h3>Example: Q1 2025 Prediction Workflow</h3>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">Collect the last 8 quarters of tabular report data</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">Track stock price movements since 2024 Q4</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">Gather 8‑K event filings from the past 3 months</div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">Fetch macroeconomic indicators for the same period</div>
+                </div>
+            </div>
+            <p class="example-note">
+                <i class="fas fa-arrow-right"></i> Timely, event‑aware, context‑rich predictions powered by our multi‑source pipeline.
+            </p>
+        </section>
+
         <div class="plans-section">
             <h3>Plans for Everyone</h3>
             <div class="plans-grid">
                 <div class="plan-card">
-                    <div class="plan-name">Basic</div>
+                    <div class="plan-name">
+                        <i class="fas fa-seedling"></i> Basic
+                    </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check-circle"></i><span>Access limited historical forecasts</span></li>
                         <li><i class="fas fa-check-circle"></i><span>Explore financial trends</span></li>
                         <li><i class="fas fa-check-circle"></i><span>Watchlist access for a few tickers</span></li>
                     </ul>
+                    <div class="plan-price">Free Trial</div>
                 </div>
                 <div class="plan-card">
-                    <div class="plan-name">Premium</div>
+                    <div class="plan-name">
+                        <i class="fas fa-chart-line"></i> Premium
+                    </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check-circle"></i><span>Sentiment-integrated forecasting</span></li>
                         <li><i class="fas fa-check-circle"></i><span>Compare performance across sectors</span></li>
                         <li><i class="fas fa-check-circle"></i><span>Export detailed forecast reports</span></li>
                     </ul>
+                    <div class="plan-price">Monthly/Annual</div>
                 </div>
                 <div class="plan-card">
-                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-name">
+                        <i class="fas fa-building"></i> Enterprise
+                    </div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check-circle"></i><span>Bulk API data access</span></li>
                         <li><i class="fas fa-check-circle"></i><span>Enterprise-level reporting dashboards</span></li>
                         <li><i class="fas fa-check-circle"></i><span>Dedicated model customization support</span></li>
                     </ul>
+                    <div class="plan-price">Custom Quote</div>
                 </div>
             </div>
         </div>
@@ -128,9 +225,8 @@
                         <i class="fas fa-user-friends"></i>
                     </div>
                     <div class="advantage-content">
-                        <h4>Cross-Functional Team</h4>
-                        <p>Built by a multidisciplinary team of engineers, financial analysts, and NLP researchers committed to scalable and ethical forecasting solutions.</p>
-                    </div>
+                        <h4>Specialized Computer Scientists</h4>
+                        <p>Built by a team of computer scientists specialized in different quantitative and qualitative areas including machine learning, NLP, financial modeling, and data engineering.</p></div>
                 </div>
                 <div class="advantage-card">
                     <div class="advantage-icon">
@@ -152,7 +248,7 @@
                 Get Started Now
             </a>
         </div>
-    </div>
+    </main>
 
     <footer>
         <div class="footer-content">
